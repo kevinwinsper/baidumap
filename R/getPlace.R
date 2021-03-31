@@ -28,7 +28,7 @@ url_character = function(x){
 #' ## Mcdonald's in shanghai
 #' sh_mcdonald = getPlace('麦当劳', '上海')
 #' }
-getPlace = function(place=NULL, city='北京', page_size=20, 
+getPlace = function(place=NULL, city=NULL, page_size=20, 
                     pages=Inf, scope=1, verbose=TRUE, map_ak=''){
     if (map_ak == '' && is.null(getOption('baidumap.key'))){
         stop(Notification)
