@@ -8,7 +8,7 @@ getCoordinate.core = function(address, city=NULL,
     ### url
     url_head = paste0('http://api.map.baidu.com/geocoder/v3/?address=', address)
     if (!is.null(city)) url_head = paste0(url_head, "&city=", city)
-    url = paste0(url_head, "&output=", output, "&ak=", map_ak,"&callback=showLocation")
+    url = paste0(url_head, "&output=", output, "&ak=", map_ak)
     
     ### result
     result = tryCatch(getURL(url),error = function(e) {getURL(url, timeout = 200)})
