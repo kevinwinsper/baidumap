@@ -1,5 +1,5 @@
 getCoordinate.core = function(address, city=NULL, 
-                              output='json', formatted = F,
+                              output='json', formatted = T,
                               map_ak = ''){
     ### address
     if (any(grepl(' |#', address))) warning('address should not have blank character!')
