@@ -60,7 +60,7 @@ getCoordinate.core = function(address, city=NULL,
 #' ## vectorization, return a matrix
 #' getCoordinate(c('北京大学', '清华大学'), formatted = T)
 #' }
-getCoordinate=function(address, city=NULL, output='json', formatted = F,limit=600, map_ak=''){
+getCoordinate=function(address, city=NULL, output='json', formatted = T,limit=600, map_ak=''){
     if (map_ak == '' && is.null(getOption('baidumap.key'))){
         stop(Notification)
     }else{
