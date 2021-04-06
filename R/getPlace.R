@@ -36,8 +36,8 @@ getPlace = function(place=NULL, city=NULL, page_size=20,
         map_ak = ifelse(map_ak == '', getOption('baidumap.key'), map_ak)
     }
     ### character
-    #place = url_character(place)
-    #city = url_character(city)
+    place = url_character(place)
+    city = url_character(city)
     
     ### url
     url_head = 'http://api.map.baidu.com/place/v2/search?ak='
