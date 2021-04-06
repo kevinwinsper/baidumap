@@ -24,7 +24,7 @@ getCoordinate.core = function(address, city=NULL,
             long = gsub('.*?"lng":([\\.0-9]*).*', '\\1', x)
         }
         long = as.numeric(long); lat = as.numeric(lat)
-        return(c("longtitude" = long, "latitude" = lat))
+        return(c("longitude" = long, "latitude" = lat))
     }
     if (formatted) {
       if (length(result) > 1) {
