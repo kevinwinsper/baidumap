@@ -12,7 +12,7 @@ getCoordinate.core = function(address, city=NULL,
     
     ### result
     result = tryCatch(getURL(url),error = function(e) {getURL(url, timeout = 200)})
-    names(result) = address
+    names(result) = seq(1,length(address))
     
     ### transform data from json/xml
     trans = function(x, out = output){
@@ -27,11 +27,14 @@ getCoordinate.core = function(address, city=NULL,
         return(c("longtitude" = long, "latitude" = lat))
     }
     if (formatted) {
-        if (length(result) > 1) {
-            result = t(sapply(result, trans))
-        } else {
-            result = trans(result)
-        }
+      if (length(result) > 1) {
+        XY = t(sapply(result, trans))
+        result = matrix(c(address,city),ncol=2)
+        colnames(result) <- c('Address', 'City')
+        result = cbind(result, XY)
+      } else {
+        result = trans(result)
+      }
     }
     
     ### final
